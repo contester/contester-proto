@@ -1,4 +1,4 @@
-import "Blobs.proto";
+import "contester_proto/Blobs.proto";
 
 package contester.proto;
 

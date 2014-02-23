@@ -1,5 +1,5 @@
-import "Blobs.proto";
-import "Execution.proto";
+import "contester_proto/Blobs.proto";
+import "contester_proto/Execution.proto";
 
 package contester.proto;
 option java_package = "org.stingray.contester.proto";
