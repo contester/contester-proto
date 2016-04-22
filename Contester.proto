@@ -1,4 +1,5 @@
-import "contester_proto/Blobs.proto";
+syntax = "proto2";
+
 import "contester_proto/Local.proto";
 
 package contester.proto;
@@ -20,18 +21,3 @@ message Compilation {
     optional bool failure = 1;
     repeated Result result_steps = 2;
 };
-
-message TestRequest {
-    optional FileBlob module = 1;
-    optional string problem_uri = 2;
-    optional bool school_mode = 3;
-};
-
-message TestResponse {
-    optional string id = 1;
-};
-
-message TestProgress {
-    optional string id = 1;
-};
-
