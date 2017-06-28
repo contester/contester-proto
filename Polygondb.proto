@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package contester.proto;
+option java_package = "org.stingray.contester.proto";
+
+message WithTTL {
+    int64 expires_at = 1;
+    string content = 2;
+}
