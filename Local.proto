@@ -7,6 +7,7 @@ package contester.proto;
 option java_package = "org.stingray.contester.proto";
 
 enum StatusCodes {
+    UNKNOWN = 0;
     COMPILATION_SUCCESSFUL = 1;
     COMPILATION_FAILED = 2;
     ACCEPTED = 10;
@@ -153,7 +154,7 @@ message FileStats {
 // Direct get
 
 message GetRequest {
-    required string name = 1;
+    string name = 1;
 };
 // returns FileBlob
 
