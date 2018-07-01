@@ -43,7 +43,8 @@ message LocalExecutionParameters {
     bool restrict_ui = 8;
     bool no_job = 9;
     uint32 process_limit = 10;
-    uint64 time_limit_hard_micros = 15;
+    uint64 kernel_time_limit_micros = 19;
+    uint64 wall_time_limit_micros = 20;
 
     RedirectParameters std_in = 12;
     RedirectParameters std_out = 13;
@@ -71,6 +72,7 @@ message LocalExecutionResult {
     uint64 total_processes = 7;
     int32 kill_signal = 8;
     int32 stop_signal = 9;
+    string error = 10;
 };
 
 message LocalExecuteConnectedResult {
@@ -81,7 +83,6 @@ message LocalExecuteConnectedResult {
 message LocalExecution {
     LocalExecutionParameters parameters = 1;
     LocalExecutionResult result = 2;
-    StatusCodes status = 3;
 };
 
 message BinaryTypeRequest {
@@ -109,8 +110,6 @@ message ClearSandboxRequest {
 
 message IdentifyRequest {
     string contester_id = 1;
-    string mongo_host = 2;
-    string mongo_db = 3;
 };
 
 message SandboxLocations {

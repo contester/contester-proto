@@ -8,7 +8,7 @@ option java_package = "org.stingray.contester.proto";
 
 message Compilation {
     enum Code {
-        Unknown = 0;
+	Unknown = 0;
         Success = 1;
         Failure = 2;
     }

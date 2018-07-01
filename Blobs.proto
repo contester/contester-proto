@@ -29,5 +29,4 @@ message Module {
 message FileBlob {
     string name = 1;
     Blob data = 2;
-    string type = 3;
 };
