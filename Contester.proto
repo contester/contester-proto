@@ -1,6 +1,7 @@
 syntax = "proto3";
 
 import "contester_proto/Local.proto";
+import "contester_proto/ProtoLogging.proto";
 
 package contester.proto;
 

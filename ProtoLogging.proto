@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+import "contester_proto/Local.proto";
+
+package contester.proto;
+option java_package = "org.stingray.contester.proto";
+
+message SingleRunResultProto {
+    LocalExecutionParameters params = 1;
+    LocalExecutionResult result = 2;
+    string name = 3;
+}
+
+message InteractiveRunResultProto {
+    SingleRunResultProto first = 1;
+    SingleRunResultProto second = 2;
+}
+
+message CachedCompileResultProto {
+    bool success = 1;
+}
+
+message ScriptCompileResultProto {}
+
+message RealCompileResultProto {
+    repeated SingleRunResultProto step = 1;
+    CachedCompileResultProto cached = 2;
+    ScriptCompileResultProto script = 3;
+}
+
+message TestResultProto {
+    SingleRunResultProto solution = 1;
+    SingleRunResultProto tester = 2;
+    InteractiveRunResultProto interactive = 3;
+}
